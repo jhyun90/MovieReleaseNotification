@@ -59,3 +59,19 @@ def job_function():
 schedule = BlockingScheduler()
 schedule.add_job(job_function, 'interval', seconds=10)
 schedule.start()
+
+# 1. Connect AWS EC2(Elastic Compute Cloud) Server with SFTP
+# 1] Have Amazon EC2 instance running
+# 2] Have my key pair ready
+# 2. SSH (Secure Shell) to EC2 instance from Mac
+# -> ssh -i [My-Key-Pair]].pem ubuntu@[IP Address]]
+# Or
+# -- Install OpenSSH server to enable SSH remote access in Ubuntu Server
+# -> sudo apt-get install openssh-server
+# 3. Install the python-pip package on AWS EC2 instance of Ubuntu
+# 1] sudo apt-get update
+# 2] sudo apt-get install python3-pip
+# 3] pip3 install requests bs4 python-telegram-bot apscheduler
+# 4. Set up FileZilla for an SFTP file transfer
+# 5. Connect a running Amazon EC2 instance with FileZilla
+#    to upload and manage files on Amazon EC2 instance over SFTP protocol
